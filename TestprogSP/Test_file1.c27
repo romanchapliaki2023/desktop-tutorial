@@ -1,0 +1,18 @@
+Program _Ab3;
+Start Var Int_4; _Aa1, _Bb2, _Xx3, _Yy4;
+Scan(_Aa1)
+Scan(_Bb2)
+
+Print(_Aa1 ++ _Bb2)
+Print(_Aa1 Sub _Bb2)
+Print(_Aa1 ** _Bb2)
+Print(_Aa1 Div _Bb2)
+Print(_Aa1 Mod _Bb2)
+
+_Xx3 :> (_Aa1 Sub _Bb2) ** 10 + (_Aa1 ++ _Bb2) Div 10
+_Yy4 :> _Xx3 ++ _Xx3 Mod 10
+
+Print(_Xx3)
+Print(_Yy4)
+
+End
