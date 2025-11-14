@@ -1,46 +1,36 @@
 Program _Ab3 ; 
-Start Var Int_4; _Aa1 , _Bb2 , _Ca1 , _Cb2 , _Xv3;
+Start Var Int_4 _Aa1 , _Bb2 , _Ca1 , _Cb2 , _Xv3;
   Scan ( _Aa1 )
-  GET ( _Bb2 )
+  Scan ( _Bb2 )
 
-  _Aa1 = _CYCLEAA; 
-start:   
-            
-If (_Aa1 :> _Bb2)      
-    goto end;
+ _Aa1 :> _Ca1
+_Lb0:
+  If _Ca1 :> _Bb2 ++ 1 {
+    Goto _Le0
+  }
+  Print ( _Ca1 ** _Ca1 )
+  _Ca1 ++ 1 :> _Ca1
+  Goto _Lb0
+_Le0:
 
-Print(_Ca1 * _Ca1);     
-_Aa1++;   
-           
-Goto Start;         
-End:;
+  0 :> _Xv3 
+  1 :> _Ca1
+_La0:
+  If _Ca1 Le _Aa1 ++ 1 {
+     Goto _Le0
+  }
+ 1 :> _Cb2
+_Lb0:
+  If _Bb2 Le _Ca2 ++ 1 {
+     Goto _Lb0
+  }
+  _Xv3 ++ 1 :> _Xv3
+  _Cb2 ++ 1 :> _Cb2
+  Goto _Lb0
+_Le1:
+  _Ca1 ++ 1 :> _Ca1
+  Goto _Lb1
+_La0:
+  Print ( _Xv3 )
 
-
-0 :> _Xv3;          
-
-1 :> _Ca1;          
-Outer_start:
-
-If (_Ca1 Le _Aa1)   
-    Goto outer_end;
-
-1 :> _Cb2;          
-Inner_start:
-
-If (_Cb2 le _Bb2)   
-    Goto Inner_end;
-
-_Xv3 ++ 1 = _Xv3;   
-
-_Cb2++;            
-Goto Inner_start;  
-
-Inner_end:
-
-_Ca1++;            
-Goto Outer_start;  
-
-Outer_end:
-
-Print(_Xv3);  
 End

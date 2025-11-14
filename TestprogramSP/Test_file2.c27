@@ -1,33 +1,33 @@
 Program _Ab3 ; 
 Start Var Int_4 _Aa1 , _Bb2 , _Cc5 , _Ma0 ;
-  GET ( _Aa1 )
-  GET ( _Bb2 )
-  GET ( _Cc4 )
+  Scan ( _Aa1 )
+  Scan ( _Bb2 )
+  Scan ( _Cc4 )
 
   If _Aa1 Le _Bb2 And _Aa1 Le _Cc5 {
-    _Ma0 :> _Aa1
-  } -Else _Bb2 Le _Aa1 And _Bb2 Le _Cc5 {
-    _Ma0 :> _Bb2
-  } -Else {
-    _Ma0 :> _Cc5
+    _Aa1 :> _Ma0
+  } Else _Bb2 Le _Aa1 And _Bb2 Le _Cc5 {
+    _Bb2 :> _Ma0
+  } Else {
+    _Cc5 :> _Ma0
   }
   Print ( _Ma0 )
 
-  If ( _Aa1 Eg _Bb2 ) And ( _Aa1 == _Cc5 ) And ( _Bb2 == _Cc5 ) {
+  If ( _Aa1 Eg _Bb2 ) And ( _Aa1 Eg _Cc5 ) And ( _Bb2 Eg _Cc5 ) {
     Print ( 1 )
-  } -Else {
+  } Else {
     Print ( 0 )
   }
     
   If Not ( _Aa1 Le 0 ) || Not ( _Bb2 Le 0 ) || Not ( _Cc5 Le 0 ) {
-    Print ( -1 )
-  } -Else {
+    Print ( Sub 1 )
+  } Else {
     Print ( 0 )
   }
 
-  If _Aa1 >= ( _Bb2 + _Cc5 ) {
+  If Not (_Aa1 Le _Bb2 ++ _Cc5) {
     Print ( 10 )
-  } -Else {
+  } Else {
     Print ( 0 )
   }
  
